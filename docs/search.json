@@ -1,159 +1,5 @@
 [
   {
-    "objectID": "MV_HS_Visit_S2025.html#definition",
-    "href": "MV_HS_Visit_S2025.html#definition",
-    "title": "Data Science",
-    "section": "Definition:",
-    "text": "Definition:\nIBM: “Data science combines math and statistics, specialized programming, advanced analytics, artificial intelligence (AI) and machine learning with specific subject matter expertise to uncover actionable insights hidden in an organization’s data. These insights can be used to guide decision making and strategic planning.”"
-  },
-  {
-    "objectID": "MV_HS_Visit_S2025.html#meet-data-science",
-    "href": "MV_HS_Visit_S2025.html#meet-data-science",
-    "title": "Data Science",
-    "section": "Meet data science",
-    "text": "Meet data science\n\nData science is an exciting discipline that allows you to turn raw data into understanding, insight, and knowledge."
-  },
-  {
-    "objectID": "MV_HS_Visit_S2025.html#r",
-    "href": "MV_HS_Visit_S2025.html#r",
-    "title": "Data Science",
-    "section": "R",
-    "text": "R"
-  },
-  {
-    "objectID": "MV_HS_Visit_S2025.html#rstudio",
-    "href": "MV_HS_Visit_S2025.html#rstudio",
-    "title": "Data Science",
-    "section": "RStudio",
-    "text": "RStudio"
-  },
-  {
-    "objectID": "MV_HS_Visit_S2025.html#data-science-life-cycle-1",
-    "href": "MV_HS_Visit_S2025.html#data-science-life-cycle-1",
-    "title": "Data Science",
-    "section": "Data science life cycle",
-    "text": "Data science life cycle"
-  },
-  {
-    "objectID": "MV_HS_Visit_S2025.html#import",
-    "href": "MV_HS_Visit_S2025.html#import",
-    "title": "Data Science",
-    "section": "Import",
-    "text": "Import"
-  },
-  {
-    "objectID": "MV_HS_Visit_S2025.html#tidy-transform",
-    "href": "MV_HS_Visit_S2025.html#tidy-transform",
-    "title": "Data Science",
-    "section": "Tidy + transform",
-    "text": "Tidy + transform"
-  },
-  {
-    "objectID": "MV_HS_Visit_S2025.html#visualize",
-    "href": "MV_HS_Visit_S2025.html#visualize",
-    "title": "Data Science",
-    "section": "Visualize",
-    "text": "Visualize"
-  },
-  {
-    "objectID": "MV_HS_Visit_S2025.html#model",
-    "href": "MV_HS_Visit_S2025.html#model",
-    "title": "Data Science",
-    "section": "Model",
-    "text": "Model"
-  },
-  {
-    "objectID": "MV_HS_Visit_S2025.html#understand",
-    "href": "MV_HS_Visit_S2025.html#understand",
-    "title": "Data Science",
-    "section": "Understand",
-    "text": "Understand"
-  },
-  {
-    "objectID": "MV_HS_Visit_S2025.html#section",
-    "href": "MV_HS_Visit_S2025.html#section",
-    "title": "Data Science",
-    "section": "",
-    "text": "# A tibble: 5 × 2\n  date             season\n  &lt;chr&gt;            &lt;chr&gt; \n1 23 January 2017  winter\n2 4 March 2017     spring\n3 14 June 2017     summer\n4 1 September 2017 fall  \n5 ...              ..."
-  },
-  {
-    "objectID": "MV_HS_Visit_S2025.html#communicate",
-    "href": "MV_HS_Visit_S2025.html#communicate",
-    "title": "Data Science",
-    "section": "Communicate",
-    "text": "Communicate"
-  },
-  {
-    "objectID": "MV_HS_Visit_S2025.html#understand-communicate",
-    "href": "MV_HS_Visit_S2025.html#understand-communicate",
-    "title": "Data Science",
-    "section": "Understand + communicate",
-    "text": "Understand + communicate"
-  },
-  {
-    "objectID": "MV_HS_Visit_S2025.html#program",
-    "href": "MV_HS_Visit_S2025.html#program",
-    "title": "Data Science",
-    "section": "Program",
-    "text": "Program"
-  },
-  {
-    "objectID": "MV_HS_Visit_S2025.html#what-you-might-actually-be-doing",
-    "href": "MV_HS_Visit_S2025.html#what-you-might-actually-be-doing",
-    "title": "Data Science",
-    "section": "What you might actually be doing?",
-    "text": "What you might actually be doing?\n\nBusiness intelligence\nCybersecurity analysis\nData visualization\n\n\n\nhttps://www.indeed.com/career-advice/finding-a-job/types-of-data-science-jobs"
-  },
-  {
-    "objectID": "MV_HS_Visit_S2025.html#sure-but-what-are-you-doing",
-    "href": "MV_HS_Visit_S2025.html#sure-but-what-are-you-doing",
-    "title": "Data Science",
-    "section": "Sure, but what are you doing",
-    "text": "Sure, but what are you doing\n\nDemand prediction for the manufacturing industry\nRecommendation systems in marketing & advertising\nCredit scoring for financial institutions\n\n\n\nhttps://addepto.com/data-science-examples-see-real-applications/"
-  },
-  {
-    "objectID": "MV_HS_Visit_S2025.html#job-growth",
-    "href": "MV_HS_Visit_S2025.html#job-growth",
-    "title": "Data Science",
-    "section": "Job Growth",
-    "text": "Job Growth\nThe US Department of Labor Statistics continues to project growth for Data Science\nhttps://www.bls.gov/ooh/math/data-scientists.htm"
-  },
-  {
-    "objectID": "MV_HS_Visit_S2025.html#courses",
-    "href": "MV_HS_Visit_S2025.html#courses",
-    "title": "Data Science",
-    "section": "Courses",
-    "text": "Courses\n\nStatistics Core\nIntroduction to Data Science\nComputer Science\nStatistical and Machine Learning"
-  },
-  {
-    "objectID": "MV_HS_Visit_S2025.html#competitions",
-    "href": "MV_HS_Visit_S2025.html#competitions",
-    "title": "Data Science",
-    "section": "Competitions",
-    "text": "Competitions\n\nMidwest Undergraduate Data Analytics Competition (MUDAC)\n\nA marathon\n\nMinneMUDAC\nBoth\n\nMeet industry professionals\nPresent your work to faculty and data scientists at companies\nPractice on real world applications"
-  },
-  {
-    "objectID": "MV_HS_Visit_S2025.html#research",
-    "href": "MV_HS_Visit_S2025.html#research",
-    "title": "Data Science",
-    "section": "Research",
-    "text": "Research\n\nCornell Summer Research Institute\nExternal Opportunities"
-  },
-  {
-    "objectID": "MV_HS_Visit_S2025.html#activity-intro",
-    "href": "MV_HS_Visit_S2025.html#activity-intro",
-    "title": "Data Science",
-    "section": "Activity Intro",
-    "text": "Activity Intro"
-  },
-  {
-    "objectID": "MV_HS_Visit_S2025.html#what-have-you-been-listening-too",
-    "href": "MV_HS_Visit_S2025.html#what-have-you-been-listening-too",
-    "title": "Data Science",
-    "section": "What have you been listening too?",
-    "text": "What have you been listening too?\nOn your phone, answer the Google Survey at\nbit.ly/MV_favs or scan the QR code."
-  },
-  {
     "objectID": "lab-16-tidy-text.html",
     "href": "lab-16-tidy-text.html",
     "title": "Text Analysis in R",
@@ -201,5 +47,159 @@
     "title": "Text Analysis in R",
     "section": "",
     "text": "What book does your table want to analyze today?\n\nGo to https://www.gutenberg.org/browse/scores/top\nClick on a top 100 book or search a book you are interested in. Not all are available and not all will be downloadable.\nReplace 26624 below with your own choice. You need the EBook-No. from the website. It can be found by scrolling down in the table on the page for the book or in the URL.\n\n\nfull_text &lt;- gutenberg_download(26624) # The number is the ebook number for the book on the website. \n\n\n\n\ntidy_book &lt;- full_text |&gt; # sends the full book \n  mutate(line = row_number()) |&gt; # give s row number to each line\n  unnest_tokens(word,text) # separates the words \"tokens\" onto their own lines\n  # This stands for un - nest - tokens\n\ntidy_book\n\n\n\n\n\n  tidy_book |&gt;\n  count(word) |&gt;\n  slice_max(n, n = 20) |&gt;\n  ggplot(aes(n, fct_reorder(word, n))) +  \n    geom_col()\n\n\n\n\n\n  tidy_book |&gt;\n  anti_join(get_stopwords(source = \"smart\")) |&gt; # This keeps only non-stopwords\n  count(word, sort = TRUE) |&gt; #count the frequency of the remaining words\n  slice_max(n, n = 20) |&gt; # keep only the top 20 counts\n  ggplot(aes(n, fct_reorder(word, n))) +  #start a blank graph\n    geom_col() #add a column (bar) graph to the blank graph\n\n\n\n\n\ntidy_book %&gt;%\n  inner_join(get_sentiments(\"bing\")) |&gt; # keeps only words with sentiments in bing\n  count(sentiment, sort = TRUE)\n\n\n\n\n\ntidy_book |&gt;\n  inner_join(get_sentiments(\"afinn\")) |&gt; # get sentiment of each word\n  summarize(sum(value))\n\n\n\n\n\ntidy_book |&gt;\n  inner_join(get_sentiments(\"afinn\")) |&gt; # get sentiment of each word\n  group_by(word) |&gt;\n  summarize(sum_sentiment = sum(value))|&gt; \n  slice_max(sum_sentiment,n=10)\n\n\n\n\n\ntidy_book |&gt;\n  inner_join(get_sentiments(\"afinn\")) |&gt; # get sentiment of each word\n  group_by(word) |&gt;\n  summarize(sum_sentiment = sum(value))|&gt; \n  slice_min(sum_sentiment,n=10)\n\n\n\n\n\nset.seed(1234)\n\ntop_positives &lt;- \n      tidy_book |&gt;\n      inner_join(get_sentiments(\"afinn\")) |&gt; # get sentiment of each word\n      group_by(word) |&gt;\n      summarize(sum_sentiment = sum(value))|&gt; \n      slice_max(sum_sentiment,n=50) \n\nwordcloud(words = top_positives$word, \n        freq = top_positives$sum_sentiment, \n        colors = brewer.pal(5,\"Blues\"),\n        random.order = FALSE)\n\n\n\n\n\ntop_negatives &lt;- \n      tidy_book |&gt;\n      inner_join(get_sentiments(\"afinn\")) |&gt; # get sentiment of each word\n      group_by(word) |&gt;\n      summarize(sum_sentiment = sum(value))|&gt; \n      slice_min(sum_sentiment,n=50) \n\nwordcloud(words = top_negatives$word, \n        freq = abs(top_negatives$sum_sentiment), \n        colors = brewer.pal(5,\"Reds\"),\n        random.order = FALSE)"
+  },
+  {
+    "objectID": "index.html#definition",
+    "href": "index.html#definition",
+    "title": "Data Science",
+    "section": "Definition:",
+    "text": "Definition:\nIBM: “Data science combines math and statistics, specialized programming, advanced analytics, artificial intelligence (AI) and machine learning with specific subject matter expertise to uncover actionable insights hidden in an organization’s data. These insights can be used to guide decision making and strategic planning.”"
+  },
+  {
+    "objectID": "index.html#meet-data-science",
+    "href": "index.html#meet-data-science",
+    "title": "Data Science",
+    "section": "Meet data science",
+    "text": "Meet data science\n\nData science is an exciting discipline that allows you to turn raw data into understanding, insight, and knowledge."
+  },
+  {
+    "objectID": "index.html#r",
+    "href": "index.html#r",
+    "title": "Data Science",
+    "section": "R",
+    "text": "R"
+  },
+  {
+    "objectID": "index.html#rstudio",
+    "href": "index.html#rstudio",
+    "title": "Data Science",
+    "section": "RStudio",
+    "text": "RStudio"
+  },
+  {
+    "objectID": "index.html#data-science-life-cycle-1",
+    "href": "index.html#data-science-life-cycle-1",
+    "title": "Data Science",
+    "section": "Data science life cycle",
+    "text": "Data science life cycle"
+  },
+  {
+    "objectID": "index.html#import",
+    "href": "index.html#import",
+    "title": "Data Science",
+    "section": "Import",
+    "text": "Import"
+  },
+  {
+    "objectID": "index.html#tidy-transform",
+    "href": "index.html#tidy-transform",
+    "title": "Data Science",
+    "section": "Tidy + transform",
+    "text": "Tidy + transform"
+  },
+  {
+    "objectID": "index.html#visualize",
+    "href": "index.html#visualize",
+    "title": "Data Science",
+    "section": "Visualize",
+    "text": "Visualize"
+  },
+  {
+    "objectID": "index.html#model",
+    "href": "index.html#model",
+    "title": "Data Science",
+    "section": "Model",
+    "text": "Model"
+  },
+  {
+    "objectID": "index.html#understand",
+    "href": "index.html#understand",
+    "title": "Data Science",
+    "section": "Understand",
+    "text": "Understand"
+  },
+  {
+    "objectID": "index.html#section",
+    "href": "index.html#section",
+    "title": "Data Science",
+    "section": "",
+    "text": "# A tibble: 5 × 2\n  date             season\n  &lt;chr&gt;            &lt;chr&gt; \n1 23 January 2017  winter\n2 4 March 2017     spring\n3 14 June 2017     summer\n4 1 September 2017 fall  \n5 ...              ..."
+  },
+  {
+    "objectID": "index.html#communicate",
+    "href": "index.html#communicate",
+    "title": "Data Science",
+    "section": "Communicate",
+    "text": "Communicate"
+  },
+  {
+    "objectID": "index.html#understand-communicate",
+    "href": "index.html#understand-communicate",
+    "title": "Data Science",
+    "section": "Understand + communicate",
+    "text": "Understand + communicate"
+  },
+  {
+    "objectID": "index.html#program",
+    "href": "index.html#program",
+    "title": "Data Science",
+    "section": "Program",
+    "text": "Program"
+  },
+  {
+    "objectID": "index.html#what-you-might-actually-be-doing",
+    "href": "index.html#what-you-might-actually-be-doing",
+    "title": "Data Science",
+    "section": "What you might actually be doing?",
+    "text": "What you might actually be doing?\n\nBusiness intelligence\nCybersecurity analysis\nData visualization\n\n\n\nhttps://www.indeed.com/career-advice/finding-a-job/types-of-data-science-jobs"
+  },
+  {
+    "objectID": "index.html#sure-but-what-are-you-doing",
+    "href": "index.html#sure-but-what-are-you-doing",
+    "title": "Data Science",
+    "section": "Sure, but what are you doing",
+    "text": "Sure, but what are you doing\n\nDemand prediction for the manufacturing industry\nRecommendation systems in marketing & advertising\nCredit scoring for financial institutions\n\n\n\nhttps://addepto.com/data-science-examples-see-real-applications/"
+  },
+  {
+    "objectID": "index.html#job-growth",
+    "href": "index.html#job-growth",
+    "title": "Data Science",
+    "section": "Job Growth",
+    "text": "Job Growth\nThe US Department of Labor Statistics continues to project growth for Data Science\nhttps://www.bls.gov/ooh/math/data-scientists.htm"
+  },
+  {
+    "objectID": "index.html#courses",
+    "href": "index.html#courses",
+    "title": "Data Science",
+    "section": "Courses",
+    "text": "Courses\n\nStatistics Core\nIntroduction to Data Science\nComputer Science\nStatistical and Machine Learning"
+  },
+  {
+    "objectID": "index.html#competitions",
+    "href": "index.html#competitions",
+    "title": "Data Science",
+    "section": "Competitions",
+    "text": "Competitions\n\nMidwest Undergraduate Data Analytics Competition (MUDAC)\n\nA marathon\n\nMinneMUDAC\nBoth\n\nMeet industry professionals\nPresent your work to faculty and data scientists at companies\nPractice on real world applications"
+  },
+  {
+    "objectID": "index.html#research",
+    "href": "index.html#research",
+    "title": "Data Science",
+    "section": "Research",
+    "text": "Research\n\nCornell Summer Research Institute\nExternal Opportunities"
+  },
+  {
+    "objectID": "index.html#activity-intro",
+    "href": "index.html#activity-intro",
+    "title": "Data Science",
+    "section": "Activity Intro",
+    "text": "Activity Intro"
+  },
+  {
+    "objectID": "index.html#what-have-you-been-listening-too",
+    "href": "index.html#what-have-you-been-listening-too",
+    "title": "Data Science",
+    "section": "What have you been listening too?",
+    "text": "What have you been listening too?\nOn your phone, answer the Google Survey at\nbit.ly/MV_favs or scan the QR code."
   }
 ]
