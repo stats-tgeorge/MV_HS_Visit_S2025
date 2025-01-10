@@ -164,8 +164,8 @@ word_counts |>
 
 ```{r}
 set.seed(1234)
-wordcloud(words = top20_songs$word, 
-          freq = top20_songs$n, 
+wordcloud(words = word_counts$word, 
+          freq = word_counts$n, 
           colors = brewer.pal(5,"Blues"),
           random.order = FALSE)
 #Note: You may need to increase the size of your plot area to get this to display properly
