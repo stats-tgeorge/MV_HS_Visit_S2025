@@ -4,7 +4,7 @@ subtitle: "Welcome to Cornell College!"
 author: Tyler George
 format: 
   revealjs:
-    footer: "Slides at [LINK](LINK)"
+    footer: "Slides at [bit.ly/MVHS-C-DS](https://bit.ly/MVHS-C-DS)"
     theme: custom.scss
     transition: fade
     slide-number: true
