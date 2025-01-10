@@ -1,0 +1,722 @@
+---
+title: "Text Analysis in R"
+author: "Tyler George   \nBased on Materials from   \nJulia Silge's Workshop   \n [https://juliasilge.github.io/tidytext-tutorial/site/](https://juliasilge.github.io/tidytext-tutorial/site/)    \n And Data Science in a Box by Mine Çetinkaya-Rundel   \n [https://datasciencebox.org/](https://datasciencebox.org/)"
+execute: 
+  eval: false
+---
+
+# Learning goals
+
+-   Text analysis
+-   Sentiment analysis
+-   Bing vs Afinn Sentiment Lexicons
+
+
+## Packages
+
+In addition to `tidyverse` we will be using other packages today
+
+```{r packages, echo=FALSE, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(tidytext)
+library(wordcloud)# Making wordclouds
+library(stopwords)
+library(googlesheets4)
+library(gutenbergr)
+gs4_deauth()
+
+```
+
+## Tidytext
+
+-   Using tidy data principles can make many text mining tasks easier, more effective, and consistent with tools already in wide use.
+-   Learn more at <https://www.tidytextmining.com/>.
+
+## Follow along
+
+## What is tidy text?
+
+Consider some of the lyrics from **There Is a Light That Never Goes Out** by The Smiths
+
+```{r}
+text <- c("Take me out tonight",
+          "Where there's music and there's people",
+          "And they're young and alive",
+          "Driving in your car",
+          "I never never want to go home",
+          "Because I haven't got one",
+          "Anymore")
+text
+```
+
+
+This form of the text is not very easy to do analysis with. Think about the data you have been working with this week. 
+
+
+##################################
+QUESTION:
+How should data be formatted? 
+##################################
+
+
+
+
+
+
+
+
+#### Tidytext
+
+This will clean (tidy) the data!
+
+```{r}
+text_df <- tibble(line = 1:7, text = text)
+
+text_df
+```
+
+
+This is still not quite right. Today, we want a word on each line. This process is called *tokenizing*, where we separate words from their sentences,.
+
+
+```{r}
+text_df |>
+  unnest_tokens(word, text)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+#### What about your favorite songs and song lines? 
+
+I am going to have R read in all of your results from the survey before. 
+
+```{r message=FALSE}
+#listening <- read_csv("data/listening.csv")
+
+listening <- 
+  read_sheet("https://docs.google.com/spreadsheets/d/1WXKCB_a8AO3CFp49VQ5yTSHYpOfDm1WA9mmYN5jTH1M/edit?usp=sharing") |> 
+  janitor::clean_names() |> # re-names the column to be called "songs"
+  select(songs) # keeps only the column called songs
+  
+listening
+```
+
+
+#### Looking for commonalities
+
+```{r}
+listening |>
+  unnest_tokens(word, songs) |>
+  count(word, sort = TRUE)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#### Back to looking for commonalities
+
+```{r}
+word_counts<-
+  listening |>
+  unnest_tokens(word, songs) |>
+  anti_join(stop_words) |>                           
+  count(word, sort = TRUE)
+
+word_counts
+```
+
+
+#### Visualizing commonalities: bar chart
+
+```{r}
+word_counts |>
+  ggplot(aes(x = fct_reorder(word, n), y = n)) +
+  geom_col() +
+  labs(x = "Common words", y = "Count") +
+  coord_flip()
+```
+
+#### Visualizing commonalities: wordcloud
+
+```{r}
+set.seed(1234)
+wordcloud(words = top20_songs$word, 
+          freq = top20_songs$n, 
+          colors = brewer.pal(5,"Blues"),
+          random.order = FALSE)
+#Note: You may need to increase the size of your plot area to get this to display properly
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Text Analysis on a Whole Book!
+
+Let's look at a whole book, The Road to Oz by L. Frank Baum.
+
+We will use an open source website of books called Project Gutenberg.
+
+
+```{r}
+full_text <- gutenberg_download(26624) # The number is the ebook number for the book on the website. 
+```
+
+Now it's time to *tokenize*, where we separate words from their sentences,  and *tidy* were R puts each word on its own line in a dataset. 
+
+```{r}
+tidy_book <- full_text |> # sends the full book 
+  mutate(line = row_number()) |> # give s row number to each line
+  unnest_tokens(word,text) # separates the words "tokens" onto their own lines
+  # This stands for un - nest - tokens
+
+tidy_book
+```
+
+
+#### Find the most common words
+
+```{r}
+tidy_book |>
+  count(word,sort = T) # this counts and sorts by top counts
+```
+
+
+#### What are the most common words?
+
+Now we want a visualization to compare the common words
+```{r}
+  tidy_book |>
+  count(word) |>
+  slice_max(n, n = 20) |>
+  ggplot(aes(n, fct_reorder(word, n))) +  
+    geom_col()
+```
+
+
+##################################
+QUESTION:
+Why is this not particularly useful? 
+
+Discuss with your group mates a step we could take before making this graph that would lead to a better, more informative, visualization. 
+##################################
+ANSWER:
+
+
+
+##################################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#### Stop words
+
+-   In computing, stop words are words which are filtered out before or after processing of text.
+-   They usually refer to the most common words in a language, but there is not a single list of stop words used by all natural language processing tools.
+
+#### English stop words
+
+```{r}
+get_stopwords()
+```
+
+#### Spanish stop words
+
+```{r}
+get_stopwords(language = "es")
+```
+
+
+#### Most common non-stopwords 
+
+```{r}
+  tidy_book |>
+  anti_join(get_stopwords(source = "smart")) |> # This keeps only non-stopwords
+  count(word, sort = TRUE) |> #count the frequency of the remaining words
+  slice_max(n, n = 20) |> # keep only the top 20 counts
+  ggplot(aes(n, fct_reorder(word, n))) +  #start a blank graph
+    geom_col() #add a column (bar) graph to the blank graph
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#### Sentiment lexicons
+
+One way to think about text is the *sentiment* of words or phrases. These are values that represent positive and negative words and phrases. For example, if someone *died*, that is more negative than say, if someone got a *promotion*. 
+
+
+Explore some sentiment lexicons, or collections of words and phrases with assigned sentiments. 
+
+```{r}
+get_sentiments("bing")
+```
+
+```{r}
+get_sentiments("afinn")
+```
+
+
+
+##################################
+QUESTION:
+How are these two *lexicons* of sentiment different? 
+##################################
+ANSWER:
+
+
+
+##################################
+
+
+
+
+
+
+
+
+
+#### Implement sentiment analysis with an `inner_join()` and *bing*
+
+We want a sentiment for each word but only for the words in our book. 
+
+```{r}
+
+tidy_book
+
+tidy_book %>%
+  inner_join(get_sentiments("bing")) |> # keeps only words with sentiments in bing
+  count(sentiment, sort = TRUE)
+```
+
+
+##################################
+QUESTION:
+What does your group think the "inner join" does? 
+##################################
+ANSWER:
+
+
+
+##################################
+
+
+
+
+
+
+
+
+
+
+
+
+
+##################################
+QUESTION:
+Consider the final result. What does this output tell you about the book? 
+##################################
+ANSWER:
+
+
+
+##################################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##################################
+QUESTION:
+This is very broad information, what else do you want to know about 
+   the sentiment of the text? How could we change out approach (not code)
+    to get more informative/useful results? 
+##################################
+ANSWER:
+
+
+
+##################################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#### Analysis with *afinn*
+
+Let's consider the *afinn* lexicon now. 
+
+
+```{r}
+tidy_book |>
+  inner_join(get_sentiments("afinn")) |> # get sentiment of each word
+  summarize(sum(value))
+```
+
+
+##################################
+QUESTION:
+When we used *bing* lexicon above we counted the number of positive
+  words and the number of negative words. 
+  
+  This new code adds up the *value* of all the words assigned sentiments. 
+  
+  For example, the word *happy* has a sentiment of `3`, and *sad* has a 
+  sentiment of `-2`, and if we add them, 3 + (-2) we get an overall 
+  sentiment of 1. 
+  
+  
+  Compare and contrast the application of *afinn* and *bing*:
+  
+  a) Which gives more information about your book? 
+  
+  b) Which is lexicon is more likely to be subjective? Why?
+  
+  
+##################################
+ANSWER:
+
+
+
+
+
+##################################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Dive deeper...
+
+
+#### We can actually get the total contributed afinn sentiment from each word
+
+The top 10 positive words:
+
+```{r}
+tidy_book |>
+  inner_join(get_sentiments("afinn")) |> # get sentiment of each word
+  group_by(word) |>
+  summarize(sum_sentiment = sum(value))|> 
+  slice_max(sum_sentiment,n=10)
+```
+
+
+This code
+
+1) finds the sentiment for each word (such as *happy* has a sentiment of 3),
+
+2) tells R to sum across each word. If happy was in the text 3 times, it would do 3+3+3 for happy and give it a score of 9.
+
+3) outputs the top 10 words that have contributed the most sentiment in the entire book
+
+
+
+Similarly the top 10 most negative words. 
+
+```{r}
+tidy_book |>
+  inner_join(get_sentiments("afinn")) |> # get sentiment of each word
+  group_by(word) |>
+  summarize(sum_sentiment = sum(value))|> 
+  slice_min(sum_sentiment,n=10)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+#### Visualize the top positive words
+
+
+```{r}
+set.seed(1234)
+
+top_positives <- 
+      tidy_book |>
+      inner_join(get_sentiments("afinn")) |> # get sentiment of each word
+      group_by(word) |>
+      summarize(sum_sentiment = sum(value))|> 
+      slice_max(sum_sentiment,n=50) 
+
+wordcloud(words = top_positives$word, 
+        freq = top_positives$sum_sentiment, 
+        colors = brewer.pal(5,"Blues"),
+        random.order = FALSE)
+```
+
+
+
+#### Visualize the top negative
+
+
+```{r}
+
+top_negatives <- 
+      tidy_book |>
+      inner_join(get_sentiments("afinn")) |> # get sentiment of each word
+      group_by(word) |>
+      summarize(sum_sentiment = sum(value))|> 
+      slice_min(sum_sentiment,n=50) 
+
+wordcloud(words = top_negatives$word, 
+        freq = abs(top_negatives$sum_sentiment), 
+        colors = brewer.pal(5,"Reds"),
+        random.order = FALSE)
+```
+
+
+
+
+## Your Turn!
+
+What book does *your table* want to analyze today?
+
+1) Go to https://www.gutenberg.org/browse/scores/top
+
+2) Click on a top 100 book or search a book you are interested in. Not all are available and not all will be downloadable. 
+
+3) Replace `26624` below with your own choice. You need the `EBook-No.` from the website. It can be found by scrolling down in the table on the page for the book or in the URL. 
+
+
+
+```{r}
+full_text <- gutenberg_download(26624) # The number is the ebook number for the book on the website. 
+```
+
+
+#### Tokenize
+
+```{r}
+tidy_book <- full_text |> # sends the full book 
+  mutate(line = row_number()) |> # give s row number to each line
+  unnest_tokens(word,text) # separates the words "tokens" onto their own lines
+  # This stands for un - nest - tokens
+
+tidy_book
+```
+
+
+#### Common Words
+
+```{r}
+  tidy_book |>
+  count(word) |>
+  slice_max(n, n = 20) |>
+  ggplot(aes(n, fct_reorder(word, n))) +  
+    geom_col()
+```
+
+
+#### Most common non-stopwords 
+
+```{r}
+  tidy_book |>
+  anti_join(get_stopwords(source = "smart")) |> # This keeps only non-stopwords
+  count(word, sort = TRUE) |> #count the frequency of the remaining words
+  slice_max(n, n = 20) |> # keep only the top 20 counts
+  ggplot(aes(n, fct_reorder(word, n))) +  #start a blank graph
+    geom_col() #add a column (bar) graph to the blank graph
+```
+
+#### Sentiment Analysis with Bing
+
+```{r}
+tidy_book %>%
+  inner_join(get_sentiments("bing")) |> # keeps only words with sentiments in bing
+  count(sentiment, sort = TRUE)
+```
+
+
+#### Sentiment Analysis with Afinn
+
+```{r}
+tidy_book |>
+  inner_join(get_sentiments("afinn")) |> # get sentiment of each word
+  summarize(sum(value))
+```
+
+#### Top 10 words that contributed the most positive sentiment
+```{r}
+tidy_book |>
+  inner_join(get_sentiments("afinn")) |> # get sentiment of each word
+  group_by(word) |>
+  summarize(sum_sentiment = sum(value))|> 
+  slice_max(sum_sentiment,n=10)
+```
+
+#### Top 10 words that contributed the most negative sentiment
+
+```{r}
+tidy_book |>
+  inner_join(get_sentiments("afinn")) |> # get sentiment of each word
+  group_by(word) |>
+  summarize(sum_sentiment = sum(value))|> 
+  slice_min(sum_sentiment,n=10)
+```
+
+
+
+
+#### Visualize the top positive words
+
+
+```{r}
+set.seed(1234)
+
+top_positives <- 
+      tidy_book |>
+      inner_join(get_sentiments("afinn")) |> # get sentiment of each word
+      group_by(word) |>
+      summarize(sum_sentiment = sum(value))|> 
+      slice_max(sum_sentiment,n=50) 
+
+wordcloud(words = top_positives$word, 
+        freq = top_positives$sum_sentiment, 
+        colors = brewer.pal(5,"Blues"),
+        random.order = FALSE)
+```
+
+
+
+#### Visualize the top negative
+
+
+```{r}
+
+top_negatives <- 
+      tidy_book |>
+      inner_join(get_sentiments("afinn")) |> # get sentiment of each word
+      group_by(word) |>
+      summarize(sum_sentiment = sum(value))|> 
+      slice_min(sum_sentiment,n=50) 
+
+wordcloud(words = top_negatives$word, 
+        freq = abs(top_negatives$sum_sentiment), 
+        colors = brewer.pal(5,"Reds"),
+        random.order = FALSE)
+```
+
