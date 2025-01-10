@@ -1,0 +1,207 @@
+---
+title: "Data Science"
+subtitle: "Welcome to Cornell College!"
+author: Tyler George
+format: 
+  revealjs:
+    footer: "Slides at [LINK](LINK)"
+    theme: custom.scss
+    transition: fade
+    slide-number: true
+    highlight-style: a11y-dark
+    embed-resources: true
+    echo: true
+    message: false
+    warning: false
+    include: true
+    incremental: true
+    cache: true
+---
+
+# What is Data Science?
+
+## Definition:
+
+*IBM*: "Data science combines math and statistics, specialized programming, advanced analytics, artificial intelligence (AI) and machine learning with specific subject matter expertise to uncover actionable insights hidden in an organization’s data. These insights can be used to guide decision making and strategic planning."
+
+
+# What does this mean?
+
+
+## Meet data science
+
+-   Data science is an exciting discipline that allows you to turn raw data into understanding, insight, and knowledge.
+
+# Todays Software
+
+## R
+
+![](images/r.png){fig-alt="An R shell" fig-align="center"}
+
+## RStudio
+
+![](images/rstudio.png){fig-alt="An RStudio window" fig-align="center"}
+
+# Data science life cycle
+
+## Data science life cycle
+
+![](data-science-cycle/data-science-cycle.001.png){fig-alt="Data science life cycle"}
+
+## Import
+
+![](data-science-cycle/data-science-cycle.002.png){fig-alt="Data science life cycle, with import highlighted"}
+
+## Tidy + transform
+
+![](data-science-cycle/data-science-cycle.003.png){fig-alt="Data science life cycle, with tidy and transform highlighted"}
+
+## Visualize
+
+![](data-science-cycle/data-science-cycle.004.png){fig-alt="Data science life cycle, with visualize highlighted"}
+
+## Model
+
+![](data-science-cycle/data-science-cycle.005.png){fig-alt="Data science life cycle, with model highlighted"}
+
+## Understand
+
+![](data-science-cycle/data-science-cycle.006.png){fig-alt="Data science life cycle, with understand highlighted"}
+
+## 
+
+::: columns
+::: {.column width="50%"}
+```{r echo=FALSE, out.width="75%", fig.align="left"}
+knitr::include_graphics("images/google-trend-index.png")
+```
+:::
+
+::: {.column width="50%"}
+```{r echo=FALSE, out.width="90%", fig.align="right"}
+knitr::include_graphics("data-science-cycle/data-science-cycle.006.png")
+```
+
+```{r}
+#| echo: false
+#| message: false
+
+library(tidyverse)
+travel <- tribble(
+  ~date,              ~season,
+  "23 January 2017",  "winter",
+  "4 March 2017",     "spring",
+  "14 June 2017",     "summer",
+  "1 September 2017", "fall",
+  "...", "..."
+)
+travel
+```
+:::
+:::
+
+## Communicate
+
+![](data-science-cycle/data-science-cycle.007.png){fig-alt="Data science life cycle, with communicate highlighted"}
+
+## Understand + communicate
+
+![](data-science-cycle/data-science-cycle.008.png){fig-alt="Data science life cycle, with understand and communicate highlighted"}
+
+## Program
+
+![](data-science-cycle/data-science-cycle.009.png){fig-alt="Data science life cycle, with program highlighted"}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## What you might actually be doing?
+
+- Business intelligence
+- Cybersecurity analysis
+- Data visualization
+
+
+::: aside
+https://www.indeed.com/career-advice/finding-a-job/types-of-data-science-jobs
+::::
+
+
+## Sure, but what are you *doing*
+
+- Demand prediction for the manufacturing industry
+
+- Recommendation systems in marketing & advertising
+
+- Credit scoring for financial institutions 
+
+::: aside
+https://addepto.com/data-science-examples-see-real-applications/
+::::
+
+## Job Growth
+
+The US Department of Labor Statistics continues to project growth for Data Science
+
+<https://www.bls.gov/ooh/math/data-scientists.htm>
+
+
+# Data Science at Cornell
+
+-   [cornellcollege.edu/data-science](https://www.cornellcollege.edu/data-science/)
+
+## Courses
+
+- Statistics Core
+- Introduction to Data Science
+- Computer Science
+- Statistical and Machine Learning
+
+## Competitions {.smaller}
+
+- Midwest Undergraduate Data Analytics Competition (MUDAC)
+  - A marathon
+- MinneMUDAC
+
+- Both
+  - Meet industry professionals
+  - Present your work to faculty and data scientists at companies
+  - Practice on real world applications
+  
+## Research
+
+- Cornell Summer Research Institute
+- External Opportunities
+
+# Take a Walk
+
+
+
+# Let's be Data Scientists
+
+## Activity Intro
+
+## What have you been listening too?
+
+On your phone, answer the Google Survey at 
+
+[bit.ly/MV_favs](https://bit.ly/MV_favs) or scan the QR code.
+
+![](bit.ly_MV_favs.png)
+
+# Transition to RStudio
