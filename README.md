@@ -1,7 +1,7 @@
 ### Repo for A 2 hour seminar and activity with Mount Vernon High Schools visit to Cornell College in Spring of 2025
 
 ### Slides:
-🔗 <>
+🔗 <https://stats-tgeorge.github.io/MV_HS_Visit_S2025/MV_HS_Visit_S2025.html>
 
 ## Attribution
 
